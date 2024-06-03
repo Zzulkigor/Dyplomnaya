@@ -1,0 +1,366 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter";
+}
+
+/*HEADER*/
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 1.5px;
+  background-color: black;
+}
+.nav a:hover::before {
+  width: 100%;
+}
+.nav a::before {
+  transition: width 0.2s;
+}
+.nav .nav-item {
+  margin-right: 20px;
+}
+
+.background img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content-block {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: justify;
+}
+.content-block h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.content-block p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+.content-block p:last-child {
+  margin-bottom: 0;
+}
+.content-block p.contact-info {
+  margin-top: 20px;
+}
+.content-block p.contact-info span {
+  font-weight: bold;
+  color: #008cba;
+}
+.content-block ul {
+  margin-bottom: 15px;
+}
+.content-block li {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+.title {
+  padding: 30px 50px;
+  font-size: 30px;
+}
+
+.container2 {
+  margin-top: 50px;
+}
+
+.card {
+  text-align: center;
+  width: 210px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*FOOTER*/
+.footer {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.footer img {
+  width: 200px;
+  height: auto;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-top: 10px;
+}
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+form button {
+  background-color: #f7a600;
+  color: black;
+  font-weight: 600;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+form button:hover {
+  background-color: #ffc35c;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.subtitle {
+  text-align: center;
+}
+
+section#about {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.container3 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+span {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.msg {
+  color: black;
+  font-size: 20px;
+}
+
+.container4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.rentForm,
+.loginForm,
+.registerForm,
+.rentForm {
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.rentForm h1,
+.loginForm h1,
+.registerForm h1,
+.rentForm h1 {
+  text-align: center;
+}
+.rentForm label,
+.loginForm label,
+.registerForm label,
+.rentForm label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+.rentForm input,
+.loginForm input,
+.registerForm input,
+.rentForm input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.subtitle {
+  margin-top: 16px;
+  color: #777;
+}
+.subtitle a {
+  color: #3498db;
+  text-decoration: none;
+}
+.subtitle a:hover {
+  text-decoration: underline;
+}
+
+.msg {
+  color: #e74c3c;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.errors {
+  font-size: 30px;
+  text-align: center;
+}
+.card .errors {
+  margin-top: 10px;
+  color: #e74c3c;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+.profile-container h1 {
+  text-align: center;
+  padding: 20px;
+}
+.profile-container p {
+  padding: 5px 0;
+}
+
+.container5 {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+.container5 h1 {
+  color: #333;
+}
+.container5 p {
+  color: #555;
+  margin: 20px 0;
+}
+.container5 a {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 20px;
+  font-weight: bold;
+}
+.container5 a:hover {
+  text-decoration: underline;
+}
+
+.container6 {
+  width: 500px;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.container6 h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container6 label {
+  display: block;
+  margin-bottom: 5px;
+}
+.container6 input, .container6 textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.container6 input[type=submit] {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

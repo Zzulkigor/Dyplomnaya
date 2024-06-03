@@ -1,0 +1,11 @@
+{
+  "name": "siteproperties",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "watch-sass": "sass --watch scss/index.scss:css/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

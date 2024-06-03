@@ -1,0 +1,455 @@
+$primary-color: #007bff;
+$secondary-color: #3498db;
+$error-color: #e74c3c;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter';
+}
+
+/*HEADER*/
+.logo {
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.nav {
+  a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0; bottom: -5px;
+      width: 0;
+      height: 1.5px;
+      background-color:black;
+    }
+    &:hover::before{
+      width: 100%;
+    }
+    &::before{
+      transition: width 0.2s ;
+    }
+  }
+  
+  
+
+  .nav-item {
+    margin-right: 20px;
+  }
+}
+
+.background {
+  img {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content-block {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  text-align: justify;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.contact-info {
+        margin-top: 20px;
+
+          span {
+            font-weight: bold;
+            color: #008cba;
+          }
+      }
+  }
+
+  ul {
+      margin-bottom: 15px;
+  }
+
+  li {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-left: 20px;
+  }
+}
+
+.title {
+  padding: 30px 50px;
+  font-size: 30px;
+}
+
+.container2 {
+  margin-top: 50px;
+}
+
+// .cards {
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+
+//   .card {
+//     position: relative;
+//     img {
+//       max-width: 100%;
+//       height: auto;
+//     }
+//     text-align: center;
+//     width: 210px;
+//     height: 250px;
+//     margin: 0 auto;
+//     margin-bottom: 20px; // Добавим небольшой отступ между карточками
+//     border-radius: 8px; // Закруглим углы карточек
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Добавим тень для эффекта поднятия
+//     transition: transform 0.3s ease; // Добавим плавный переход при наведении
+//     &:hover {
+//       transform: translateY(-5px); // При наведении немного поднимем карточку
+//     }
+//     .name {
+//       font-weight: bold;
+//       margin-top: 10px; // Добавим отступ между названием и картинкой
+//     }
+//     .price {
+//       margin-top: 5px; // Добавим небольшой отступ между ценой и названием
+//     }
+//     .status {
+//       display: none; // Скрываем статус недвижимости
+//     }
+//     .butt {
+//       position: absolute;
+//       bottom: 20px; // Поместим кнопку чуть ниже карточки
+//       left: 0;
+//       right: 0;
+//       margin-left: auto;
+//       margin-right: auto;
+//       width: fit-content; // Делаем ширину кнопки равной ее содержимому
+//     }
+//     .btnRent {
+//       background-color: #007bff;
+//       color: white;
+//       padding: 10px 20px;
+//       border: none;
+//       border-radius: 5px;
+//       cursor: pointer;
+//       font-size: 16px;
+//       transition: background-color 0.3s ease;
+//       &:hover {
+//         background-color: #0056b3; // При наведении изменяем цвет фона кнопки
+//       }
+//     }
+//   }
+// }
+
+.card {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  text-align: center;
+  width: 210px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*FOOTER*/
+.footer {
+  img {
+    width: 200px;
+    height: auto;
+  }
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin-top: 10px;
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  button {
+    background-color: #f7a600;
+    // background-color: #4caf50;
+    color: black;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+    &:hover {
+      background-color: #ffc35c;
+      transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      
+    }
+  }
+}
+
+.subtitle {
+  text-align: center;
+}
+
+section#about {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.container3 {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+span {
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.msg {
+  color: black;
+  font-size: 20px;
+}
+
+.container4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.rentForm,
+.loginForm,
+.registerForm, 
+.rentForm {
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1{
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  // .btnRent,
+  // .btnAuth,
+  // .btnReg {
+  //   background-color: $primary-color;
+  //   color: #fff;
+  //   padding: 10px 15px;
+  //   border: none;
+  //   border-radius: 4px;
+  //   cursor: pointer;
+  //   &:hover {
+  //     background-color: darken($primary-color, 10%);
+  //   }
+  // }
+}
+
+.subtitle {
+  margin-top: 16px;
+  color: #777;
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.msg {
+  color: $error-color;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.errors {
+  font-size: 30px;
+  text-align: center;
+
+  .card & {
+    margin-top: 10px;
+    color: $error-color;
+  }
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 10px 10px 10px rgba(0.1, 0.1, 0.1, 0.1);
+
+  h1{
+    text-align: center;
+    padding: 20px;
+  }
+
+  p{
+    padding: 5px 0;
+  }
+  
+}
+
+.container5 {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  h1 {
+    color: #333;
+  }
+  p {
+    color: #555;
+    margin: 20px 0;
+  }
+  a {
+    text-decoration: none;
+    color: $primary-color;
+    margin-right: 20px;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.container6 {
+  width: 500px;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  padding: 20px;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  input[type="submit"] {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    background-color:#f2f2f2;
+  }
+}
+
+.text-center{
+  text-align: center;
+}
