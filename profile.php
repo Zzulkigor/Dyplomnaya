@@ -10,7 +10,7 @@
 
     //Выход
     if (isset($_GET['logout'])) {
-        session_destroy(); // Уничтожаем сессию
+        session_destroy();
         header("Location: index.php");
         exit();
     }
@@ -53,7 +53,7 @@
                     echo '<p>Статус: ' . $row['status'] . '</p>';
 
                     if($row['status'] === 'подтверждено'){
-                        echo "<a href='rental.php'>Арендовать</a>";
+                        echo "<a href='rental.php?booking_id=" . $row['booking_id'] . "'>Арендовать</a>";
                     }
 
                     echo '</div>';

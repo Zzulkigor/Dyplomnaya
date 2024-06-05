@@ -14,28 +14,30 @@
     <title>Отзывы</title>
 </head>
 <body>
+    <div class="container8">
     <?php
 
-    require "connect/connect.php";
-    require "blocks/header.php";
+        require "connect/connect.php";
+        require "blocks/header.php";
 
-    // Выполнить запрос к таблице reviews
-    $query = "SELECT * FROM reviews";
-    $result = $conn->query($query);
-    if ($result === false) {
-        die("Не удалось выполнить запрос к базе данных: " . $conn->error);
-    }
+        // Выполнить запрос к таблице reviews
+        $query = "SELECT * FROM reviews";
+        $result = $conn->query($query);
+        if ($result === false) {
+            die("Не удалось выполнить запрос к базе данных: " . $conn->error);
+        }
 
-    // Обработать результаты запроса
-    while ($row = $result->fetch_assoc()) {
-        // Выводим отзыв
-        echo "<h2>Имя: " . $row['name'] . "</h2>";
-        echo "<h3>Отзыв: " . $row['comment'] . "</h3>";
-    }
+        // Обработать результаты запроса
+        while ($row = $result->fetch_assoc()) {
+            // Выводим отзыв
+            echo "<h2>Имя: " . $row['name'] . "</h2>";
+            echo "<h3>Отзыв: " . $row['comment'] . "</h3>";
+        }
 
-    // Закрыть соединение с базой данных
-    $conn->close();
+        // Закрыть соединение с базой данных
+        $conn->close();
 
     ?>
+    </div>
 </body>
 </html>

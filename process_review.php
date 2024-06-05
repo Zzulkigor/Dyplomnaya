@@ -1,33 +1,47 @@
 <?php
-// process_review.php
+// Подключаем файл с настройками базы данных
+require "connect/connect.php";
+session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Подключение к базе данных
-    $conn = new mysqli('localhost', 'root', 'Lindemann_1995', 'admin2');
-    if (!$conn) {
-        die("Ошибка в подключении");
-    }
-
-    // Получение данных из формы отзыва
+// Проверяем, были ли переданы все необходимые данные
+if (isset($_POST['name'], $_POST['email'], $_POST['comment'], $_POST['booking_id'])) {
+    // Получаем данные из формы
     $name = $_POST['name'];
     $email = $_POST['email'];
     $comment = $_POST['comment'];
+    $booking_id = $_POST['booking_id'];
 
-    // Вставка данных в базу данных
-    $sql = "INSERT INTO reviews (name, email, comment) VALUES ('$name', '$email', '$comment')";
+    // Проверяем, существует ли сессионная переменная с ID пользователя
+    if (isset($_SESSION['log_in'])) {
+        $user_id = $_SESSION['log_in'];
 
-    if (mysqli_query($conn, $sql)) {
-        // Если запрос выполнен успешно, перенаправляем на страницу с подтверждением
-        header("Location: review_confirmation.php");
-        exit();
+        // Экранируем данные, чтобы избежать SQL-инъекций
+        $name = mysqli_real_escape_string($conn, $name);
+        $email = mysqli_real_escape_string($conn, $email);
+        $comment = mysqli_real_escape_string($conn, $comment);
+
+        // Формируем SQL-запрос для вставки данных в базу данных
+        $sql = "INSERT INTO `reviews` (`booking_id`, `user_id`, `name`, `email`, `comment`) 
+                VALUES ('$booking_id', '$user_id', '$name', '$email', '$comment')";
+
+        // Выполняем запрос
+        $result = mysqli_query($conn, $sql);
+
+        // Проверяем успешность выполнения запроса
+        if ($result) {
+            // Отзыв успешно добавлен в базу данных
+            header("Location: review_confirmation.php");
+            exit();
+        } else {
+            // Ошибка при выполнении запроса
+            echo "Ошибка при выполнении запроса: " . mysqli_error($conn);
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        // Если пользователь не авторизован, выводим сообщение об ошибке
+        echo "Ошибка: пользователь не авторизован";
     }
-
-    mysqli_close($conn);
 } else {
-    // Если кто-то попытается получить доступ к этому файлу напрямую, перенаправьте их на главную страницу
-    header("Location: index.php");
-    exit();
+    // Если не все данные формы были переданы, выводим сообщение об ошибке
+    echo "Ошибка: не все данные формы были переданы";
 }
 ?>

@@ -19,9 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$booking_id', '$user_id', '$check_in_date', '$check_out_date', '$payment_method', 'арендовано')";
         
         if (mysqli_query($conn, $sql)) {
-            // Запись успешно добавлена в базу данных
-            // Можно выполнить дополнительные действия, например, перенаправить пользователя на страницу с подтверждением аренды или на его профиль
-            header("Location: success.php");
+            header("Location: success_message.php?booking_id=$booking_id");
             exit();
         } else {
             // Ошибка при добавлении записи в базу данных
