@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="content-block">
+    <div id="content-block" class="content-block">
         <h1>GOLDEN HAUSE</h1>
         <p>Мы специализируемся на помощи людям при покупке или аренде недвижимости. Наша компания предоставляет широкий спектр услуг, включая:</p>
         <ul>
@@ -44,5 +44,6 @@
     <?php
         require "blocks/footer.php"
     ?>
+    <script src="script.js"></script>
 </body>
 </html>

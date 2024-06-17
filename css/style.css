@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -122,11 +123,41 @@ body {
   max-width: 100%;
   height: auto;
 }
+.card .name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.card .price {
+  margin-top: 5px;
+}
+.card .status {
+  margin-top: 100px;
+}
+.card .butt {
+  position: absolute;
+  bottom: 20;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card .btnRent {
+  background-color: #f7a600;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.card .btnRent:hover {
+  background-color: #ffc35c;
+}
 
 .cards {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 /*FOOTER*/
@@ -141,7 +172,6 @@ body {
 }
 
 form {
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -336,7 +366,8 @@ span {
   display: block;
   margin-bottom: 5px;
 }
-.container6 input, .container6 textarea {
+.container6 input,
+.container6 textarea {
   width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
@@ -352,38 +383,57 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
-table th, table td {
+table th,
+table td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: center;
+  text-align: left;
+}
+table th {
+  background-color: #007bff;
+  color: white;
+}
+table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
-.text-center {
-  text-align: center;
+table tr:hover {
+  background-color: #ddd;
 }
 
-.container7 {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-.container7 h1 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-.container7 a {
-  color: #007bff;
-  text-decoration: none;
-  display: inline-block;
-  border-bottom: 1px solid transparent;
-  transition: border-bottom-color 0.3s ease;
-}
-.container7 a:hover {
-  border-bottom-color: #007bff;
+/* Медиазапросы для адаптивного дизайна */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav a {
+    font-size: 14px;
+  }
+  .nav .nav-item {
+    margin-right: 10px;
+  }
+  .content-block {
+    padding: 10px;
+  }
+  .title {
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .card .butt {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
